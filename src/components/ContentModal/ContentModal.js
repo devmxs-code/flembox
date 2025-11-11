@@ -2,7 +2,7 @@ import React from 'react';
 import { X, Play, Bookmark, Heart, Star, Film, Tv } from 'lucide-react';
 import { StarRating } from '../StarRating/StarRating';
 import { IMAGE_BASE_URL } from '../../constants/api';
-import { formatDuration, formatReleaseDate, getGenreNames, getContentTitle, getContentReleaseDate } from '../../utils/formatters';
+import { formatDuration, formatReleaseDate, formatYear, getGenreNames, getContentTitle, getContentReleaseDate } from '../../utils/formatters';
 
 export const ContentModal = ({ item, genres, rating, isFavorite, isInWatchlist, onClose, onFavoriteToggle, onWatchlistToggle, onRate }) => {
   if (!item) return null;
