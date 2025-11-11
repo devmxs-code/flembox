@@ -68,7 +68,7 @@ const App = () => {
     setSearchTerm(suggestion.title || suggestion.name);
     searchContent(suggestion.title || suggestion.name);
     setShowSuggestions(false);
-  }, [contentType, searchContent]);
+  }, [searchContent]);
 
   const handleGenreChange = useCallback((genreId) => {
     setSelectedGenre(genreId);
