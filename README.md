@@ -1,70 +1,170 @@
-# Getting Started with Create React App
+# 🎬 FlemBox
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Sistema de recomendação de filmes e séries desenvolvido em React, utilizando a API do The Movie Database (TMDB). Aplicação moderna com interface responsiva, suporte a modo escuro e funcionalidades completas de busca, filtros e organização de conteúdo.
 
-## Available Scripts
+## ✨ Funcionalidades
 
-In the project directory, you can run:
+- 🎥 **Busca de Filmes e Séries**: Pesquisa em tempo real com sugestões automáticas
+- 🔍 **Filtros Avançados**: Filtro por gênero e ordenação por popularidade, avaliação, data
+- ⭐ **Sistema de Avaliação**: Avalie filmes e séries com sistema de estrelas (1-5)
+- ❤️ **Favoritos**: Marque seus conteúdos favoritos
+- 📌 **Watchlist**: Crie uma lista para assistir depois
+- 🌙 **Modo Escuro**: Interface com suporte a tema claro/escuro
+- 📱 **Responsivo**: Design adaptável para mobile, tablet e desktop
+- 🎨 **Interface Moderna**: UI/UX moderna com Tailwind CSS e animações suaves
 
-### `npm start`
+## 🚀 Tecnologias
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React 19** - Biblioteca JavaScript para construção de interfaces
+- **Tailwind CSS** - Framework CSS utilitário
+- **Lucide React** - Biblioteca de ícones
+- **Framer Motion** - Biblioteca de animações
+- **The Movie Database API** - API para dados de filmes e séries
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📋 Pré-requisitos
 
-### `npm test`
+- Node.js (versão 14 ou superior)
+- npm ou yarn
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🔧 Instalação
 
-### `npm run build`
+1. Clone o repositório:
+```bash
+git clone https://github.com/seu-usuario/flembox.git
+cd flembox
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Instale as dependências:
+```bash
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Inicie o servidor de desenvolvimento:
+```bash
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. Acesse `http://localhost:3000` no navegador
 
-### `npm run eject`
+## 📁 Estrutura do Projeto
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+flembox/
+├── src/
+│   ├── components/          # Componentes React
+│   │   ├── ContentCard/     # Card de conteúdo (grid)
+│   │   ├── ContentListItem/ # Item de lista
+│   │   ├── ContentModal/    # Modal de detalhes
+│   │   ├── Filters/         # Componente de filtros
+│   │   ├── Header/          # Cabeçalho da aplicação
+│   │   ├── SearchBar/       # Barra de pesquisa
+│   │   └── StarRating/      # Componente de avaliação
+│   ├── constants/           # Constantes da aplicação
+│   │   └── api.js           # Configurações da API
+│   ├── hooks/              # Custom hooks
+│   │   ├── useContent.js    # Hook para gerenciar conteúdo
+│   │   ├── useDarkMode.js   # Hook para modo escuro
+│   │   ├── useGenres.js     # Hook para gêneros
+│   │   ├── useLocalStorage.js # Hook para localStorage
+│   │   └── useSearchSuggestions.js # Hook para sugestões
+│   ├── services/           # Serviços
+│   │   └── apiService.js    # Serviço de API
+│   ├── utils/              # Utilitários
+│   │   ├── formatters.js   # Funções de formatação
+│   │   └── sorters.js      # Funções de ordenação
+│   ├── App.js              # Componente principal
+│   ├── index.js            # Ponto de entrada
+│   └── index.css           # Estilos globais
+├── public/                 # Arquivos públicos
+├── package.json            # Dependências do projeto
+└── README.md              # Este arquivo
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🏗️ Arquitetura
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+O projeto segue os princípios **SOLID** e **Clean Code**:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **Single Responsibility Principle**: Cada componente e função tem uma responsabilidade única
+- **Open/Closed Principle**: Componentes extensíveis sem modificação
+- **Dependency Inversion**: Uso de hooks e serviços para abstrair dependências
+- **Separation of Concerns**: Separação clara entre lógica de negócio, apresentação e dados
 
-## Learn More
+### Estrutura de Componentes
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **Componentes Presentacionais**: Componentes focados apenas na apresentação (ContentCard, StarRating)
+- **Componentes de Container**: Componentes que gerenciam estado e lógica (App)
+- **Custom Hooks**: Lógica reutilizável extraída para hooks (useContent, useLocalStorage)
+- **Services**: Lógica de comunicação com APIs isolada (apiService)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🎯 Scripts Disponíveis
 
-### Code Splitting
+- `npm start` - Inicia o servidor de desenvolvimento
+- `npm run build` - Cria build de produção
+- `npm test` - Executa os testes
+- `npm run eject` - Ejeta a configuração do Create React App (irreversível)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🔑 API Key
 
-### Analyzing the Bundle Size
+O projeto utiliza a API do TMDB. A chave da API está configurada no arquivo `src/constants/api.js`. Para produção, recomenda-se usar variáveis de ambiente.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📝 Funcionalidades Detalhadas
 
-### Making a Progressive Web App
+### Busca
+- Busca em tempo real com debounce de 300ms
+- Sugestões automáticas durante a digitação
+- Suporte a filmes e séries
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Filtros
+- Filtro por gênero (dinâmico baseado no tipo de conteúdo)
+- Ordenação por:
+  - Popularidade
+  - Avaliação
+  - Mais recentes
+  - Mais antigos
 
-### Advanced Configuration
+### Visualização
+- Modo Grid: Cards com informações resumidas
+- Modo Lista: Lista horizontal com mais detalhes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Persistência
+- Dados salvos no localStorage:
+  - Favoritos
+  - Watchlist
+  - Avaliações
+  - Preferência de tema
 
-### Deployment
+## 🎨 Customização
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Cores e Tema
+O projeto utiliza Tailwind CSS com suporte a modo escuro. As cores podem ser customizadas através do arquivo `tailwind.config.js`.
 
-### `npm run build` fails to minify
+### API
+Para alterar a configuração da API, edite o arquivo `src/constants/api.js`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🤝 Contribuindo
+
+Contribuições são bem-vindas! Sinta-se à vontade para:
+
+1. Fazer fork do projeto
+2. Criar uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abrir um Pull Request
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
+
+## 👨‍💻 Autor
+
+Desenvolvido com ❤️ usando React e Clean Code principles.
+
+## 🙏 Agradecimentos
+
+- [The Movie Database (TMDB)](https://www.themoviedb.org/) pela API gratuita
+- Comunidade React pela excelente documentação
+- Tailwind CSS pela framework CSS utilitária
+
+---
+
+**Nota**: Este projeto foi desenvolvido para fins educacionais e demonstração de boas práticas de desenvolvimento React.
